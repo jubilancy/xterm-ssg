@@ -63,7 +63,6 @@ async function artWidget() {
   try {
     const a = await artOfTheDay();
     const img = el('img', { src: a.thumb, alt: `${a.title}${a.artist ? ' by ' + a.artist : ''}`, loading: 'lazy' });
-    img.crossOrigin = 'anonymous';
     b.replaceChildren(img, el('a', { className: 't', href: a.url, target: '_blank', rel: 'noopener', textContent: a.title }),
       el('div', { className: 'dim', textContent: [a.artist, a.date].filter(Boolean).join(' · ') }),
       el('div', { className: 'dim' }, 'Art Institute of Chicago · ', el('a', { href: '/media', textContent: 'more →' })));
