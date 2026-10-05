@@ -1,0 +1,9 @@
+Switch deploy target to Cloudflare Pages
+
+Remove the Shipstatic GitHub Actions workflow (deploy count is capped)
+Rename project to el-site and make the README host-neutral.
+Add public/_headers for asset caching and rewrite the README deploy
+section for Cloudflare Pages git integration.
+
+Co-Authored-By: Claude Sonnet 5.5 <noreply@anthropic.com>
+Claude-Session: https://claude.ai/code/session_015JH3QYzVSKFjDrFBcHxBhA

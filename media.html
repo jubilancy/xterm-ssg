@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>media · el</title>
+  <meta name="description" content="An endless scroll of public-domain art from three museum collections.">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <script type="module" src="/src/media.js"></script>
+</head>
+<body class="scroll media">
+  <header class="bar sticky">
+    <nav class="l" aria-label="Sessions"><a href="/">0:term</a><a class="cur" href="/media">1:media*</a></nav>
+    <div id="np" class="np" data-state="unset" aria-live="polite">
+      <span class="eq" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+      <span>now listening:</span><span class="np-text">&hellip;</span>
+    </div>
+    <div class="r" id="clock"></div>
+  </header>
+
+  <div class="wrap">
+    <section class="pane tools" aria-label="Search and filters">
+      <form id="search" class="prompt" role="search">
+        <label for="q"><span class="p1">guest</span><span class="dim">@</span><span class="p2">media</span> <span class="p3">$</span> search</label>
+        <input id="q" type="search" autocomplete="off" spellcheck="false" placeholder="try: cat, ships, moon, kimono  ( / to focus )">
+        <button type="submit">run</button>
+        <button type="button" id="shuffle" title="new random batch (r)">shuffle</button>
+        <button type="button" id="savedbtn" aria-pressed="false" title="show saved (s)">saved <span id="savedn">0</span></button>
+      </form>
+      <div class="srcs" role="group" aria-label="Sources">
+        <button type="button" data-src="aic" aria-pressed="true">aic</button>
+        <button type="button" data-src="met" aria-pressed="true">met</button>
+        <button type="button" data-src="cma" aria-pressed="true">cma</button>
+        <span class="dim" id="active-q"></span>
+      </div>
+    </section>
+
+    <div class="layout">
+      <main>
+        <div id="grid" class="grid-art"><div class="sizer"></div></div>
+        <p id="msg" class="dim center" aria-live="polite"></p>
+        <div id="sentinel" aria-hidden="true"></div>
+      </main>
+
+      <aside class="side" aria-label="Widgets">
+        <section class="pane" id="w-sources"><h2>sources</h2><div class="body"></div></section>
+        <section class="pane" id="w-stats"><h2>session</h2><div class="body"></div></section>
+        <section class="pane" id="w-tags"><h2>tags in view</h2><div class="body"></div></section>
+        <section class="pane"><h2>keys</h2><div class="body dim">
+          <kbd>/</kbd> search &middot; <kbd>r</kbd> shuffle &middot; <kbd>s</kbd> saved<br><kbd>esc</kbd> close &middot; <kbd>&larr;</kbd><kbd>&rarr;</kbd> in viewer
+        </div></section>
+        <section class="pane"><h2>about this feed</h2><div class="body dim">
+          Only works marked public domain or CC0 by the museums are shown. Images come straight from the museum servers. Title and source links go to the museum's own page.
+        </div></section>
+      </aside>
+    </div>
+  </div>
+
+  <dialog id="viewer" aria-label="Artwork viewer">
+    <div class="vbar"><span id="v-count" class="dim"></span><button type="button" id="v-close" aria-label="Close">esc</button></div>
+    <img id="v-img" alt="">
+    <div class="vmeta">
+      <a id="v-title" target="_blank" rel="noopener"></a>
+      <div id="v-by" class="dim"></div>
+      <div class="vrow"><a id="v-src" target="_blank" rel="noopener"></a><span id="v-lic" class="dim"></span>
+        <button type="button" id="v-save">save</button><button type="button" id="v-copy">copy link</button></div>
+      <div id="v-tags" class="tags"></div>
+    </div>
+  </dialog>
+
+  <footer class="bar bottom"><span id="foot-l">public domain art &middot; aic &middot; met &middot; cma</span><span></span></footer>
+</body>
+</html>

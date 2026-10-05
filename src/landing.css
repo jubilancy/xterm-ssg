@@ -1,0 +1,26 @@
+body { display: flex; flex-direction: column; height: 100dvh; }
+.grid { flex: 1; min-height: 0; display: grid; grid-template-columns: minmax(0, 1fr) 300px; gap: 8px; padding: 8px; }
+.term-pane { overflow: hidden; }
+#term { flex: 1; min-height: 0; padding: 6px 4px 4px 8px; }
+#term .xterm-viewport { background: transparent !important; }
+.side { display: flex; flex-direction: column; gap: 8px; overflow-y: auto; min-height: 0; padding-right: 2px; }
+.side .pane { flex: none; }
+.big-time { font-size: 34px; line-height: 1.1; letter-spacing: .02em; color: var(--accent); }
+.kv { display: grid; grid-template-columns: auto 1fr; gap: 0 10px; font-size: 12px; }
+.kv dt { color: var(--dim); } .kv dd { margin: 0; text-align: right; overflow-wrap: anywhere; }
+.bar-row { font-size: 12px; display: grid; grid-template-columns: 34px 1fr 40px; gap: 6px; align-items: center; }
+.bar-row .meter { white-space: nowrap; overflow: hidden; }
+#w-art img { width: 100%; display: block; border: 1px solid var(--line); border-radius: 3px; margin-bottom: 6px; }
+#w-art a.t { display: block; font-size: 13px; line-height: 1.3; }
+#w-links ul { list-style: none; margin: 0; padding: 0; columns: 2; font-size: 13px; }
+.moon-glyph { font-size: 28px; line-height: 1; margin-right: 8px; float: left; }
+@media (max-width: 900px) {
+  body { overflow: auto; height: auto; }
+  .grid { grid-template-columns: minmax(0, 1fr); }
+  .term-pane { height: 62dvh; }
+  .side { overflow: visible; }
+  .bar { grid-template-columns: 1fr; text-align: center; }
+  .bar .l, .bar .r { justify-content: center; text-align: center; }
+  .np { max-width: 100%; justify-content: center; }
+  .bar.bottom span:last-child { display: none; }
+}

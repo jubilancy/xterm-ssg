@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>el</title>
+  <meta name="description" content="A terminal landing page. Type help.">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <script type="module" src="/src/landing.js"></script>
+</head>
+<body>
+  <header class="bar">
+    <nav class="l" aria-label="Sessions"><a class="cur" href="/">0:term*</a><a href="/media">1:media</a></nav>
+    <div id="np" class="np" data-state="unset" aria-live="polite">
+      <span class="eq" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+      <span>now listening:</span><span class="np-text">&hellip;</span>
+    </div>
+    <div class="r" id="clock"></div>
+  </header>
+
+  <main class="grid">
+    <section class="pane term-pane" aria-label="Terminal">
+      <h2 id="term-title">zsh &mdash; ~</h2>
+      <div id="term"></div>
+    </section>
+
+    <aside class="side" aria-label="Widgets">
+      <section class="pane" id="w-clock"><h2>clock</h2><div class="body"></div></section>
+      <section class="pane" id="w-weather"><h2>weather</h2><div class="body">&hellip;</div></section>
+      <section class="pane" id="w-moon"><h2>moon</h2><div class="body"></div></section>
+      <section class="pane" id="w-progress"><h2>progress</h2><div class="body"></div></section>
+      <section class="pane" id="w-art"><h2>art of the day</h2><div class="body">&hellip;</div></section>
+      <section class="pane" id="w-links"><h2>links</h2><div class="body"></div></section>
+      <section class="pane" id="w-sys"><h2>this browser</h2><div class="body"></div></section>
+    </aside>
+  </main>
+
+  <footer class="bar bottom">
+    <span><kbd>help</kbd> commands &middot; <kbd>tab</kbd> complete &middot; <kbd>&uarr;</kbd> history &middot; <kbd>ctrl-c</kbd> stop &middot; <kbd>media</kbd> art scroll</span>
+    <span id="foot-r"></span>
+  </footer>
+</body>
+</html>
