@@ -14,11 +14,11 @@ export default {
   links: [
     { name: 'glosse.me', url: 'https://glosse.me' },
     { name: 'stacks', url: 'https://stacks.glosse.me' },
-    { name: 'eliana.lol', url: 'https://eliana.lol' },
-    { name: 'feed', url: 'https://feed.eliana.lol' },
-    { name: 'gallery', url: 'https://gallery.eliana.lol' },
-    { name: 'obscura', url: 'https://obscura.eliana.lol' },
-    { name: 'tools', url: 'https://tools.eliana.lol' },
+    { name: 'assets', url: 'https://assets.glosse.me' },
+    { name: 'feed', url: 'https://feed.glosse.me' },
+    { name: 'gallery', url: 'https://gallery.glosse.me' },
+    { name: 'obscura', url: 'https://obscura.glosse.me' },
+    { name: 'tools', url: 'https://tools.glosse.me' },
     { name: 'bluesky', url: 'https://bsky.app/profile/basedgirl.bsky.social' },
     { name: 'github', url: 'https://github.com/jubilancy' },
   ],
@@ -28,7 +28,7 @@ export default {
   // Leave user empty and the bar says it is not set up.
   nowPlaying: {
     provider: 'listenbrainz',
-    user: '',
+    user: 'eliana',
     lastfmApiKey: '',
     pollSeconds: 30,
   },
